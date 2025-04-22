@@ -35,3 +35,37 @@ rules:
               "path": "/components"  
             }];
         )      
+
+    my_rules.swagger:
+      title: Swagger
+      description: Проверка наличия swagger
+      source: >
+        (
+            $manifest := $;	
+            $value := "openapi"; 	
+            [$not([docs.$filter($.*, function($v, $i, $a) {$contains($v."type", $value)}).($)]) ? {
+               "uid": "$dh-mm-nfapi",
+               "title": "Нет ни одного контракта swagger",
+               "description": "Не найдено ни одного описанного контракта swagger",
+               "correction": "Опишите свои контракты swagger в соответствии с инструкцией",
+               "location": "@document",
+               "path": "/docs"  
+            }];        
+        )
+
+    my_rules.business:
+      title: Бизнес-процесс
+      description: Наличие бизнес-процесса
+      source: >
+        (            
+            $manifest := $;	
+            $value := "bpmnj"; 	
+            [$not([docs.$filter($.*, function($v, $i, $a) {$contains($v."type", $value)}).($)]) ? {
+               "uid": "$dh-mm-nfbp",
+               "title": "Нет ни одного описанного БП",
+               "description": "Не найдено ни одного описанного бизнес-процесса",
+               "correction": "Опишите свои бизнес-процессы в соответствии с инструкцией",
+               "location": "@document",
+               "path": "/docs"  
+            }];     
+        )
