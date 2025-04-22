@@ -1,0 +1,6 @@
+docs:
+  doc1745304223152:
+    type: openapi
+    source: documents/swagger.yaml
+    location: /Документы/Swagger
+    title: Swagger
