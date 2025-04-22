@@ -9,7 +9,7 @@ rules:
        (
           $manifest := $;
           $matcher := /dochub.welcome/; /*Задаем параметр фильтрации запроса*/
-          [$not([$manifest.docs.$sift(function($v, $k) {$k ~> $matcher}).$spread().{"count": 1}]) ? {
+          [$not($exists($manifest.docs.$sift(function($v, $k) {$k ~> $matcher}))) ? {
             "uid": "$dh-mm-nfwp",
             "title": "Не найден документа главной страницы",
             "description": "Не найден документа главной страницы",
@@ -17,4 +17,21 @@ rules:
             "location": "@document/dochub.welcome",
             "path": "/docs/dochub.welcome"  
           }]; 
-        )
+       )
+       
+    my_rules.diagram_l1:
+      title: Уровень
+      description: Проверка уровня L1
+      source: >
+        (
+           $manifest := $;
+           $systems := $manifest.components.$sift(function($v) { $v.entity="system" });
+           [$not([$systems]) ? {
+              "uid": "$dh-mm-nfs",
+              "title": "Нет ни одной системы",
+              "description": "Не найдено ни одной описанной информационной системы",
+              "correction": "Опишите свои системы в соответствии с инструкцией",
+              "location": "@component",
+              "path": "/components"  
+            }];
+        )      

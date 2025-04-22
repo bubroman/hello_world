@@ -1,0 +1,5 @@
+components: 
+  my_system:
+    title: Новый компонент
+    entity: system
+    

@@ -10,6 +10,9 @@ imports:
   - https://alpha.dochub.info/archcode/_metamodel_/ceaf-app/dochub.yaml
   - rules.yaml
   - all_docs.yaml
+  - systems.yaml
+
+
 docs:
     dochub.welcome:
       {
