@@ -1,1 +1,20 @@
-null
+rules:
+  validators: 
+    my_rules:
+      title: Валидаторы
+    my_rules.welcome:
+      title: Проверка Wellcome
+      description: Проверка главной страницы
+      source: >
+       (
+          $manifest := $;
+          $matcher := /dochub.welcome/; /*Задаем параметр фильтрации запроса*/
+          [$not([$manifest.docs.$sift(function($v, $k) {$k ~> $matcher}).$spread().{"count": 1}]) ? {
+            "uid": "$dh-mm-nfwp",
+            "title": "Не найден документа главной страницы",
+            "description": "Не найден документа главной страницы",
+            "correction": "Подключите свою главную страницу в соответствии с инструкцией описанной при входе",
+            "location": "@document/dochub.welcome",
+            "path": "/docs/dochub.welcome"  
+          }]; 
+        )
