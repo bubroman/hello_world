@@ -59,7 +59,7 @@ rules:
       source: >
         (            
             $manifest := $;	
-            $value := "bpmnj"; 	
+            $value := "bpmnjs"; 	
             [$not([docs.$filter($.*, function($v, $i, $a) {$contains($v."type", $value)}).($)]) ? {
                "uid": "$dh-mm-nfbp",
                "title": "Нет ни одного описанного БП",

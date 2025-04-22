@@ -4,3 +4,8 @@ docs:
     source: documents/swagger.yaml
     location: /Документы/Swagger
     title: Swagger
+  doc1745313406262:
+    type: bpmnjs
+    source: documents/test.bpmn
+    location: /Документы/BPMN
+    title: BPMN
