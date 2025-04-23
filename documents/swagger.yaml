@@ -1,4 +1,47 @@
 openapi: 3.0.0
-  info:
-    title: Swagger
-
+info:
+  title: Swagger
+  description: Простой API с двумя методами GET и POST
+  version: 1.0.0
+paths:
+  /get-method:
+    get:
+      summary: Метод GET
+      operationId: getMethod
+      responses:
+        "200":
+          description: Успешный ответ
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Привет, это ответ от метода GET!"
+  /post-method:
+    post:
+      summary: Метод POST
+      operationId: postMethod
+      requestBody:
+        description: Тело запроса
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "Иван"
+        required: true
+      responses:
+        "201":
+          description: Успешный ответ
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Привет, Иван! Это ответ от метода POST!"
