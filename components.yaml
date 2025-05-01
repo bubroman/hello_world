@@ -1,0 +1,18 @@
+components:
+  frontend: # Компонент фронтенда
+    title: "Frontend"
+    entity: "component"
+    technologies: ["JavaScript", "VUEJS2", "Chrome", "Firefox", "Safari"]
+    links:
+      - id: "backend"
+        direction: "<--"
+        title: "API взаимодействия"
+
+  backend: # Компонент бэкенда
+    title: "Backend"
+    entity: "component"
+    technologies: ["JavaScript"]
+    links:
+      - id: "frontend"
+        direction: "-->"
+        title: "API взаимодействия"

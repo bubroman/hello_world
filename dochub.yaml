@@ -11,12 +11,12 @@ imports:
   - context_ai.yaml
   - components.yaml
 docs:
-  # dochub.flex_metamodel.manifest_yandex:
+  # dochub.my_metamodel.manifest_yandex:
   #   type: markdown
   #   source: manifest.md
   #   location: /Документы/Манифест от Яндекс
   #   title: Манифест
-  dochub.flex_metamodel.manifest_deepseek:
+  dochub.my_metamodel.manifest_deepseek:
     type: markdown
     source: manifest2.md
     location: /Документы/Манифест от DeepSeek

@@ -7,21 +7,14 @@
 
 Каждый компонент описывается в **JSON** с обязательными полями:
 - `name` – уникальное имя.  
-- `type` (`web`, `service`, `module`).  
 - `description` – назначение компонента.  
-- `owners` – ответственные.  
-- `interfaces` – как компонент общается с другими.  
-- `dependencies` – от каких сервисов зависит.  
-- `health_check` – эндпоинт для мониторинга.  
-- `deployment` – способ развертывания.  
 
 Связи между компонентами:
 
-Frontend → (HTTPS) → Backend  
-Backend → (gRPC) → Auth-Service  
-Backend → (Kafka) → Logging-Service  
-Admin-Module → (HTTP) → Backend  
-Admin-Module → (SQL) → Database  
+- Фротэнд и Бэкенд по протоколу HTTPS
+- Бэкенд и Сервис авторизации по протоколу gRPC
+- Бэкенд и Сервис логировани по протоколу Kafka 
+- Модуль администрирования и Бэкенд по протоколу HTTPS
+- Модуль администрирования должен иметь базу данных
 
-
-В связях должно быть явное описание протокола (REST, gRPC, WebSocket, Kafka).  
+В связях должно быть явное описание протокола (REST, gRPC, WebSocket, Kafka, HTTPS).  
