@@ -1,0 +1,12 @@
+contexts:
+  web_project:
+    title: "Контекст веб-проекта"
+    location: "DocHub/Проекты/Веб-проект"
+    icon: "globe"
+    components:
+      - frontend
+      - backend
+      - auth_service
+      - logging_service
+      - admin_module
+

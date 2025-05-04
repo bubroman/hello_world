@@ -10,6 +10,8 @@ imports:
   - https://alpha.dochub.info/archcode/_metamodel_/ceaf-app/dochub.yaml
   - context_ai.yaml
   - components.yaml
+  - context.yaml
+
 docs:
   # dochub.my_metamodel.manifest_yandex:
   #   type: markdown
@@ -21,4 +23,8 @@ docs:
     source: manifest2.md
     location: /Документы/Манифест от DeepSeek
     title: Манифест от DeepSeek
-
+  doc1746347929647:
+    type: markdown
+    source: report.md
+    location: /Документы/Отчет
+    title: Отчет

@@ -1,1 +1,65 @@
-null
+components:
+  frontend:
+    title: "Frontend"
+    description: "Клиентская часть веб-приложения"
+    entity: "component"
+    links:
+      - id: backend
+        direction: "-->"
+        title: "HTTPS"
+        protocol: "HTTPS"
+  backend:
+    title: "Backend"
+    description: "Серверная часть веб-приложения"
+    entity: "component"
+    links:
+      - id: frontend
+        direction: "<--"
+        title: "HTTPS"
+        protocol: "HTTPS"
+      - id: auth_service
+        direction: "-->"
+        title: "gRPC"
+        protocol: "gRPC"
+      - id: logging_service
+        direction: "-->"
+        title: "Kafka"
+        protocol: "Kafka"
+      - id: admin_module
+        direction: "<--"
+        title: "HTTPS"
+        protocol: "HTTPS"
+  auth_service:
+    title: "Сервис авторизации"
+    description: "Обеспечивает аутентификацию и авторизацию пользователей"
+    entity: "component"
+    links:
+      - id: backend
+        direction: "<--"
+        title: "gRPC"
+        protocol: "gRPC"
+  logging_service:
+    title: "Сервис логирования"
+    description: "Обеспечивает сбор и хранение логов"
+    entity: "component"
+    links:
+      - id: backend
+        direction: "<--"
+        title: "Kafka"
+        protocol: "Kafka"
+  admin_module:
+    title: "Модуль администрирования"
+    description: "Обеспечивает административные функции и управление системой"
+    entity: "component"
+    links:
+      - id: backend
+        direction: "-->"
+        title: "HTTPS"
+        protocol: "HTTPS"
+    technologies:
+      - Database
+
+
+
+
+
