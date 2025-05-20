@@ -8,6 +8,10 @@ imports:
   # The default metamodel CEAF is included here. You can completely replace it with your own.
   # Здесь подключается метамодель CEAF по умолчанию. Вы можете полностью заменить ее своей.
   - https://alpha.dochub.info/archcode/_metamodel_/ceaf-app/dochub.yaml
+  - context_ai.yaml
+  - components.yaml
+  - context.yaml
+
 docs:
   doc1747754545196:
     type: markdown
