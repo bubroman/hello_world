@@ -13,18 +13,8 @@ imports:
   - context.yaml
 
 docs:
-  # dochub.my_metamodel.manifest_yandex:
-  #   type: markdown
-  #   source: manifest.md
-  #   location: /Документы/Манифест от Яндекс
-  #   title: Манифест
-  dochub.my_metamodel.manifest_deepseek:
+  doc1747754545196:
     type: markdown
-    source: manifest2.md
-    location: /Документы/Манифест от DeepSeek
-    title: Манифест от DeepSeek
-  doc1746347929647:
-    type: markdown
-    source: report.md
-    location: /Документы/Отчет
-    title: Отчет
+    source: bt_template.md
+    location: /Документы/Шаблон БТ
+    title: Шаблон БТ
