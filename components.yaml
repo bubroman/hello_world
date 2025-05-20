@@ -1,58 +1,69 @@
 components:
-  frontend:
+  web:
+    entity: system
+    title: WEB-система
+  web.frontend:
     title: "Frontend"
     description: "Клиентская часть веб-приложения"
     entity: "component"
+    status: new
     links:
-      - id: backend
+      - id: web.backend
         direction: "-->"
         title: "HTTPS"
         protocol: "HTTPS"
-  backend:
+  web.backend:
     title: "Backend"
     description: "Серверная часть веб-приложения"
     entity: "component"
     links:
-      - id: frontend
+      - id: web.frontend
         direction: "<--"
         title: "HTTPS"
+        contract: "http://yandex.ru"
         protocol: "HTTPS"
-      - id: auth_service
+      - id: web.auth_service
         direction: "-->"
         title: "gRPC"
         protocol: "gRPC"
-      - id: logging_service
+      - id: web.logging_service
         direction: "-->"
         title: "Kafka"
         protocol: "Kafka"
-      - id: admin_module
+      - id: web.admin_module
         direction: "<--"
         title: "HTTPS"
         protocol: "HTTPS"
-  auth_service:
+  web.auth_service:
     title: "Сервис авторизации"
     description: "Обеспечивает аутентификацию и авторизацию пользователей"
     entity: "component"
+    aspects:
+      - dp_in
+      - dp_out
     links:
-      - id: backend
+      - id: web.backend
         direction: "<--"
         title: "gRPC"
         protocol: "gRPC"
-  logging_service:
+  web.logging_service:
     title: "Сервис логирования"
     description: "Обеспечивает сбор и хранение логов"
     entity: "component"
+    aspects:
+      - dp_in
+      - dp_out
     links:
-      - id: backend
+      - id: web.backend
         direction: "<--"
         title: "Kafka"
         protocol: "Kafka"
-  admin_module:
+  web.admin_module:
     title: "Модуль администрирования"
     description: "Обеспечивает административные функции и управление системой"
     entity: "component"
     links:
-      - id: backend
+      - id: web.backend
         direction: "-->"
         title: "HTTPS"
         protocol: "HTTPS"
@@ -60,6 +71,15 @@ components:
       - Database
 
 
+aspects: 
+# Входящие интеграции
+  dp_in:
+    title: API (IN)
+    location: API (IN)
 
+#  Исходящие интеграции
+  dp_out:
+    title: API (OUT)
+    location: API (OUT)
 
 
