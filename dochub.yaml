@@ -2,7 +2,7 @@
 # Этот файл был создан автоматически в DocHub (dochub.info)
 $package:
   github-bubroman-hello_world:
-    name: github-bubroman-hello_world
+    name: github-bubroman_hello_world
     version: 1.0.0
 imports:
   # The default metamodel CEAF is included here. You can completely replace it with your own.
@@ -16,4 +16,18 @@ docs:
     source: bt_template.md
     location: /Документы/Шаблон БТ
     title: Шаблон БТ
-
+  doc1747766971350:
+    type: markdown
+    source: new_bt.md
+    location: /Документы/Новое БТ
+    title: Новое БТ
+  doc_system_report:
+    type: markdown
+    source: ../docs/report.md
+    location: /Документы/Отчет по оценке БТ
+    title: Отчет по оценке БТ
+  dochub.welcome:
+    type: markdown
+    source: main.md
+    title: Главная страница портала
+    default: true
