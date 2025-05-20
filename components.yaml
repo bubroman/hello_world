@@ -1,0 +1,85 @@
+components:
+  web:
+    entity: system
+    title: WEB-система
+  web.frontend:
+    title: "Frontend"
+    description: "Клиентская часть веб-приложения"
+    entity: "component"
+    status: new
+    links:
+      - id: web.backend
+        direction: "-->"
+        title: "HTTPS"
+        protocol: "HTTPS"
+  web.backend:
+    title: "Backend"
+    description: "Серверная часть веб-приложения"
+    entity: "component"
+    links:
+      - id: web.frontend
+        direction: "<--"
+        title: "HTTPS"
+        contract: "http://yandex.ru"
+        protocol: "HTTPS"
+      - id: web.auth_service
+        direction: "-->"
+        title: "gRPC"
+        protocol: "gRPC"
+      - id: web.logging_service
+        direction: "-->"
+        title: "Kafka"
+        protocol: "Kafka"
+      - id: web.admin_module
+        direction: "<--"
+        title: "HTTPS"
+        protocol: "HTTPS"
+  web.auth_service:
+    title: "Сервис авторизации"
+    description: "Обеспечивает аутентификацию и авторизацию пользователей"
+    entity: "component"
+    aspects:
+      - dp_in
+      - dp_out
+    links:
+      - id: web.backend
+        direction: "<--"
+        title: "gRPC"
+        protocol: "gRPC"
+  web.logging_service:
+    title: "Сервис логирования"
+    description: "Обеспечивает сбор и хранение логов"
+    entity: "component"
+    aspects:
+      - dp_in
+      - dp_out
+    links:
+      - id: web.backend
+        direction: "<--"
+        title: "Kafka"
+        protocol: "Kafka"
+  web.admin_module:
+    title: "Модуль администрирования"
+    description: "Обеспечивает административные функции и управление системой"
+    entity: "component"
+    links:
+      - id: web.backend
+        direction: "-->"
+        title: "HTTPS"
+        protocol: "HTTPS"
+    technologies:
+      - Database
+
+
+aspects: 
+# Входящие интеграции
+  dp_in:
+    title: API (IN)
+    location: API (IN)
+
+#  Исходящие интеграции
+  dp_out:
+    title: API (OUT)
+    location: API (OUT)
+
+

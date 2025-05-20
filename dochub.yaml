@@ -8,9 +8,23 @@ imports:
   # The default metamodel CEAF is included here. You can completely replace it with your own.
   # Здесь подключается метамодель CEAF по умолчанию. Вы можете полностью заменить ее своей.
   - https://alpha.dochub.info/archcode/_metamodel_/ceaf-app/dochub.yaml
+  - context_ai.yaml
+  - components.yaml
+  - context.yaml
+
 docs:
-  doc1744207430056:
-    type: jodit
-    source: hello_world.wyg
-    location: /Документы/Hello World
-    title: Hello World
+  # dochub.my_metamodel.manifest_yandex:
+  #   type: markdown
+  #   source: manifest.md
+  #   location: /Документы/Манифест от Яндекс
+  #   title: Манифест
+  dochub.my_metamodel.manifest_deepseek:
+    type: markdown
+    source: manifest2.md
+    location: /Документы/Манифест от DeepSeek
+    title: Манифест от DeepSeek
+  doc1746347929647:
+    type: markdown
+    source: report.md
+    location: /Документы/Отчет
+    title: Отчет
